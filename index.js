@@ -13,7 +13,11 @@ app.get('/', (req, res) =>
 
 app.post('/api/data', (req, res) => 
 {
-    res.send('<h1>Works!</h1>')
+    const { CO, CO2, CH4, O3, Temp, Hum, Press } = req.body
+    if(CO && CO2 && CH4 && O3 && Temp && Hum && Press)
+    {
+        res.send(`CO=${CO}, CO2=${CO2}, CH4=${CH4}, O3=${O3}, Temp=${Temp}, Hum=${Hum}, Press=${Press},`)
+    }
 })
 
 app.listen(app.get('port'), () => console.log(`Listening on port ${app.get('port')}`))
