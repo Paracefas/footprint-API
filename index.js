@@ -31,7 +31,7 @@ app.get('/api/get-data', (req, res) =>
 app.post('/api/data', (req, res) => 
 {
     const { Coorlat, Coorlon } = req.body
-    dbConnection().query(`INSERT INTO Sensors VALUES(${Coorlat}, ${Coorlon}, 0, 0, 0, 0, 0, 0)`)
+    dbConnection().query(`INSERT INTO Sensors VALUES(${Coorlat}, ${Coorlon}, 0, 0, 0, 0, 0, 0, 0)`)
     res.send('<h1>H</h1>')
 })
 
