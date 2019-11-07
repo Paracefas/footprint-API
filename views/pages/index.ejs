@@ -27,7 +27,7 @@
             let result = await fetch('/api/get-data')
             let json = await result.json()
             
-            let mymap = L.map('mapid').setView([-37.97598, -57.60276], 13)
+            let mymap = L.map('mapid').setView([-37.97598, -57.60276], 25)
             L.tileLayer('https://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicGFyYWNlZmFzIiwiYSI6ImNrMm9kYnlyZzEyY3MzZG83aWRxZG15ZjYifQ.j2TdiQZUfjuri_2tg7FDBA', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
