@@ -36,4 +36,4 @@ app.post('/api/data', (req, res) =>
     res.send('<h1>H</h1>')
 })
 
-app.listen(app.get('port'), () => console.log(`Listening on port ${app.get('port')}`))
+app.listen(app.get('port'), () => console.log(`port ${app.get('port')}`))
