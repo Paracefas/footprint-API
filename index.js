@@ -40,9 +40,8 @@ app.post('/api/data', (req, res) =>
     const O3 = req.body.O3 || Sensors.O3 || 0
     const TEMP = req.body.TEMP || Sensors.TEMP || 0
     const HUM = req.body.HUM || Sensors.HUM || 0
-    const PRESS = req.body.PRESS || Sensors.PRESS || 0
     
-    dbConnection().query(`INSERT INTO Sensors VALUES(${CO}, ${CO2}, ${CH4}, ${O3}, ${TEMP}, ${HUM}, ${PRESS}, ${Coorlat}, ${Coorlon})`)
+    dbConnection().query(`INSERT INTO Sensors VALUES(${CO}, ${CO2}, ${CH4}, ${O3}, ${TEMP}, ${HUM}, ${Coorlat}, ${Coorlon})`)
     
     res.send('<h1>H</h1>')
 })
