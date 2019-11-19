@@ -22,6 +22,14 @@
     <div id="mapid"></div>
 
     <script>
+        function distance(par0, par1)
+        {
+            return Math.sqrt(Math.pow(par0.Latitude - par1.Latitude, 2) + Math.pow(par0.Longitude - par1.Longitude, 2))
+        }
+        function isInsideOfACircle(radious, origin, point)
+        {
+            return (distance(origin, point) < radious)
+        }
         (async function() 
         {
             let result = await fetch('/api/get-data')
@@ -34,17 +42,17 @@
                 accessToken: 'your.mapbox.access.token'
             }).addTo(mymap)
             
-
             for(let x of json.result)
+            {
                 L.marker([x.Latitude, x.Longitude]).
                     bindPopup(`<b>CO:</b> ${x.CO}<br>
-                               <b>CO2:</b> ${x.CO2}<br>
-                               <b>CH4:</b> ${x.CH4}<br>
-                               <b>O3:</b> ${x.O3}<br>
-                               <b>Temp:</b> ${x.Temperature}<br>
-                               <b>Hum:</b> ${x.Humidity}<br>`).openPopup().addTo(mymap)
-            
-            L.marker([133,31]).addTo(mymap)
+                            <b>CO2:</b> ${x.CO2}<br>
+                            <b>CH4:</b> ${x.CH4}<br>
+                            <b>O3:</b> ${x.O3}<br>
+                            <b>Temp:</b> ${x.Temperature}<br>
+                            <b>Hum:</b> ${x.Humidity}<br>`).openPopup().addTo(mymap)
+            }
+            //L.marker([133,31]).addTo(mymap)
 
         })()
         </script>
